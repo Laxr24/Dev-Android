@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="myStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:text">Some dummy</item>
+        <item name="color">#ffff</item>
+        <item name="backgroundTint">#FF2222</item>
+    </style>
+</resources>

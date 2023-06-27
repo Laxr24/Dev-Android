@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/statusBarColor"
+    android:orientation="vertical"
+    tools:context=".Screen_login">
+
+    <EditText
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:hint="Security code"
+        android:background="@drawable/edittext_bg"
+        android:inputType="numberPassword"
+        android:layout_marginVertical="10dp"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="8dp"
+        android:textColorHint="#3E7171"
+        android:textColor="@color/black"
+        android:id="@+id/passWord"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Login"
+        android:background="@drawable/loginbutton_bg"
+        android:id="@+id/btnLogin"/>
+
+</LinearLayout>

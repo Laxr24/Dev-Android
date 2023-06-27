@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Text To Speach</string>
+    <string name="tts">This is working perfectly fine. Now what I want to do is to implement this with a new Application on this phone!</string>
+</resources>
