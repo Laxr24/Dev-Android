@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
             // the NotificationChannel class is new and not in the support library
             CharSequence name = "General updates";
             String description = "Shows general updates with status, contents";
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel channel =
                     new NotificationChannel(CHANNEL_ID, name, importance);
             channel.setDescription(description);

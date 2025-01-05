@@ -44,7 +44,7 @@ public class MyBgWork extends Worker {
 
         try {
             MainActivity.getThreadID("10 min test started!");
-            Thread.sleep((1000 * 60) * 15);
+            Thread.sleep(5000);
             MainActivity.makeStatusPendingNotification(getApplicationContext(), "Test passed", "Result");
         } catch (Exception e) {
 
