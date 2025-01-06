@@ -1,8 +1,6 @@
 package com.example.workmanager;
 
 import android.content.Context;
-import android.os.Looper;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.work.Worker;
@@ -16,13 +14,7 @@ public class MyWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Looper.prepare();
-                Toast.makeText(getApplicationContext(),"From worker thread", Toast.LENGTH_LONG).show();
-            }
-        }).start();
+        Utility.sendNotification(getApplicationContext(), "Background task done", "Your task is been done");
         return Result.success();
     }
 }
