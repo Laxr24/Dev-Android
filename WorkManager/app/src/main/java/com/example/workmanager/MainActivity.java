@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(v->{
             Log.d("log", "onCreate: Button Clicked");
             MyWork.scheduleWork(MainActivity.this);
+            Utility.readSms(MainActivity.this);
         });
     }
 }
