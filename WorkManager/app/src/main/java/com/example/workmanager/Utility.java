@@ -10,7 +10,10 @@ public class Utility {
     public static void sendNotification(Context context, String title, String content){
         String channelID = "MYNOTIFICATION";
 
-        NotificationManager nm = context.getSystemService(NotificationManager.class);
+        NotificationManager nm = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            nm = context.getSystemService(NotificationManager.class);
+        }
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             NotificationChannel nc = new NotificationChannel(channelID, "Main channel", NotificationManager.IMPORTANCE_HIGH);
@@ -18,7 +21,7 @@ public class Utility {
         }
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, channelID)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setSmallIcon(R.drawable.ic_launcher_background)
                 .setContentTitle(title)
                 .setContentText(content)
                 .setPriority(NotificationManager.IMPORTANCE_HIGH);
