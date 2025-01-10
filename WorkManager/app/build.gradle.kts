@@ -41,13 +41,10 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
-
-    val work_version = "2.9.1"
     // (Java only)
     implementation(libs.work.runtime)
 
     implementation(libs.volley)
-
 
 
 }

@@ -8,6 +8,6 @@ public class AlarmBroadCast extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Utility.notifyUser(context, "Alarm"+System.currentTimeMillis(), "Alarm generate "+System.currentTimeMillis());
-        Utility.stopRepeatingAlerm();
+        Utility.readSms(context);
     }
 }

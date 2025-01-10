@@ -1,7 +1,5 @@
 package com.example.workmanager;
 
-import static androidx.core.content.ContextCompat.getSystemService;
-
 import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -23,7 +21,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 public class Utility {
 
@@ -50,14 +47,15 @@ public class Utility {
 
     }
 
-    public static void setRepeatingTaskWithAlarm(Context context){
+    public static void setRepeatingTaskWithAlarm(Context context, long userTime){
         alarmManager = context.getSystemService(AlarmManager.class);
         Intent intent = new Intent(context, AlarmBroadCast.class);
-        pendingIntent = PendingIntent.getBroadcast(context, 200, intent, PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-        alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, 5000, 5000, pendingIntent);
+        pendingIntent = PendingIntent.getBroadcast(context, 200, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        long time = System.currentTimeMillis();
+        alarmManager.set(AlarmManager.RTC_WAKEUP, time+(userTime*1000),pendingIntent);
     }
 
-    public static void stopRepeatingAlerm(){
+    public static void stopRepeatingAlarm(){
         alarmManager.cancel(pendingIntent);
     }
 
